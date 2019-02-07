@@ -1,0 +1,1209 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 230 230 2 2
+config CONFIG 0 8007 8007 2 2
+$dist/default/production\5onoff.X.production.obj
+cinit CODE 0 232 232 35 2
+text1 CODE 0 F9B F9B 1D 2
+text2 CODE 0 7BD 7BD 2F 2
+text3 CODE 0 638 638 E2 2
+text4 CODE 0 FB8 FB8 1E 2
+text5 CODE 0 71A 71A 6B 2
+text6 CODE 0 EFF EFF F 2
+text7 CODE 0 F7F F7F 1C 2
+text8 CODE 0 EF3 EF3 C 2
+text9 CODE 0 EE7 EE7 C 2
+text10 CODE 0 EDC EDC B 2
+text11 CODE 0 F36 F36 16 2
+text12 CODE 0 ED2 ED2 A 2
+text13 CODE 0 F65 F65 1A 2
+text14 CODE 0 F21 F21 15 2
+text15 CODE 0 ECA ECA 8 2
+text17 CODE 0 F4C F4C 19 2
+nvBANK0 BANK0 1 60 60 A 1
+idataCOMMON CODE 0 2 2 2 2
+maintext CODE 0 267 267 3D1 2
+cstackCOMMON COMMON 1 70 70 6 1
+cstackBANK0 BANK0 1 20 20 2D 1
+inittext CODE 0 EC4 EC4 6 2
+swtext10 CONST 0 8A0 8A0 14 2
+swtext11 CONST 0 8B4 8B4 14 2
+intentry CODE 0 4 4 22C 2
+bssBANK0 BANK0 1 6A 6A 2 1
+idataBANK0 CODE 0 F0E F0E 13 2
+idataBANK1 CODE 0 785 785 38 2
+idataBANK2 CODE 0 FD6 FD6 2A 2
+swtext1 CONST 0 7EC 7EC 14 2
+swtext2 CONST 0 800 800 14 2
+swtext3 CONST 0 814 814 14 2
+swtext4 CONST 0 828 828 14 2
+swtext5 CONST 0 83C 83C 14 2
+swtext6 CONST 0 850 850 14 2
+swtext7 CONST 0 864 864 14 2
+swtext8 CONST 0 878 878 14 2
+swtext9 CONST 0 88C 88C 14 2
+dataBANK0 BANK0 1 4D 4D 13 1
+dataBANK1 BANK1 1 A0 A0 38 1
+dataBANK2 BANK2 1 120 120 2A 1
+dataCOMMON COMMON 1 7A 7A 2 1
+bssCOMMON COMMON 1 76 76 4 1
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 6C-6F 1
+RAM D8-EF 1
+RAM 14A-16F 1
+RAM 1A0-1EF 1
+RAM 220-26F 1
+RAM 2A0-2EF 1
+RAM 320-36F 1
+RAM 3A0-3EF 1
+RAM 420-46F 1
+RAM 4A0-4BF 1
+BANK0 6C-6F 1
+BANK1 D8-EF 1
+BANK2 14A-16F 1
+BANK3 1A0-1EF 1
+BANK4 220-26F 1
+BANK5 2A0-2EF 1
+BANK6 320-36F 1
+BANK7 3A0-3EF 1
+BANK8 420-46F 1
+BANK9 4A0-4BF 1
+CONST 8C8-EC3 2
+CONST 1000-1FFF 2
+ENTRY 8C8-EC3 2
+ENTRY 1000-1FFF 2
+IDLOC 8000-8003 2
+SFR10 500-56F 1
+SFR11 580-5EF 1
+SFR12 600-66F 1
+SFR13 680-6EF 1
+SFR14 700-76F 1
+SFR15 780-7EF 1
+SFR16 800-86F 1
+SFR17 880-8EF 1
+SFR18 900-96F 1
+SFR19 980-9EF 1
+SFR20 A00-A6F 1
+SFR21 A80-AEF 1
+SFR22 B00-B6F 1
+SFR23 B80-BEF 1
+SFR24 C00-C6F 1
+SFR25 C80-CEF 1
+SFR26 D00-D6F 1
+SFR27 D80-DEF 1
+SFR28 E00-E6F 1
+SFR29 E80-EEF 1
+SFR30 F00-F6F 1
+SFR31 F80-FEF 1
+STACK 20CA-22EF 1
+CODE 8C8-EC3 2
+CODE 1000-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-11F 1
+SFR3 180-19F 1
+SFR4 200-21F 1
+SFR5 280-29F 1
+SFR6 300-31F 1
+SFR7 380-39F 1
+SFR8 400-41F 1
+SFR9 480-49F 1
+BIGRAM 2000-22EF 1
+COMMON 7C-7D 1
+STRCODE 8C8-EC3 2
+STRCODE 1000-1FFF 2
+STRING 8C8-EC3 2
+STRING 1000-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\5onoff.X.production.obj
+232 cinit CODE >819:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+232 cinit CODE >822:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+232 cinit CODE >915:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+235 cinit CODE >916:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+236 cinit CODE >917:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+239 cinit CODE >918:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+23A cinit CODE >922:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+23B cinit CODE >923:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+23C cinit CODE >924:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+23D cinit CODE >925:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+23E cinit CODE >926:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+23F cinit CODE >927:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+240 cinit CODE >928:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+241 cinit CODE >929:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+242 cinit CODE >930:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+243 cinit CODE >931:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+246 cinit CODE >935:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+247 cinit CODE >936:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+248 cinit CODE >937:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+249 cinit CODE >938:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+24A cinit CODE >939:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+24B cinit CODE >940:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+24C cinit CODE >941:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+24D cinit CODE >942:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+24E cinit CODE >943:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+24F cinit CODE >944:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+252 cinit CODE >948:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+253 cinit CODE >949:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+254 cinit CODE >950:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+255 cinit CODE >951:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+256 cinit CODE >952:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+257 cinit CODE >953:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+258 cinit CODE >954:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+259 cinit CODE >955:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+25A cinit CODE >956:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+25B cinit CODE >957:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+25D cinit CODE >962:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+25E cinit CODE >963:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+25F cinit CODE >964:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+260 cinit CODE >965:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+261 cinit CODE >969:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+262 cinit CODE >970:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+263 cinit CODE >976:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+263 cinit CODE >978:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+264 cinit CODE >979:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+265 cinit CODE >980:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+4 intentry CODE >154:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+9 intentry CODE >156:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F intentry CODE >158:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+10 intentry CODE >159:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+11 intentry CODE >160:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+13 intentry CODE >162:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+13 intentry CODE >166:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+19 intentry CODE >168:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1A intentry CODE >170:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1B intentry CODE >171:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1E intentry CODE >172:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+20 intentry CODE >173:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+21 intentry CODE >174:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+23 intentry CODE >178:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+25 intentry CODE >179:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+27 intentry CODE >180:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+28 intentry CODE >181:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2D intentry CODE >190:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+30 intentry CODE >196:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+32 intentry CODE >202:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+34 intentry CODE >203:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+36 intentry CODE >207:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+38 intentry CODE >208:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3A intentry CODE >212:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3C intentry CODE >217:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3E intentry CODE >222:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+40 intentry CODE >227:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+42 intentry CODE >228:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+44 intentry CODE >232:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+45 intentry CODE >237:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+47 intentry CODE >238:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+49 intentry CODE >186:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+56 intentry CODE >245:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+57 intentry CODE >251:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+59 intentry CODE >256:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5B intentry CODE >257:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5D intentry CODE >261:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5F intentry CODE >266:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+61 intentry CODE >271:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+63 intentry CODE >276:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+65 intentry CODE >277:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+67 intentry CODE >281:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+69 intentry CODE >286:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6B intentry CODE >287:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6D intentry CODE >291:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6F intentry CODE >296:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+71 intentry CODE >297:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+73 intentry CODE >248:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+80 intentry CODE >304:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+81 intentry CODE >310:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+83 intentry CODE >315:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+85 intentry CODE >316:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+87 intentry CODE >320:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+89 intentry CODE >325:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+8B intentry CODE >326:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+8D intentry CODE >330:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+8F intentry CODE >335:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+91 intentry CODE >336:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+93 intentry CODE >340:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+95 intentry CODE >345:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+97 intentry CODE >346:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+99 intentry CODE >350:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+9B intentry CODE >355:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+9D intentry CODE >356:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+9F intentry CODE >307:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+AC intentry CODE >363:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+AD intentry CODE >369:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+AF intentry CODE >374:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+B1 intentry CODE >379:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+B3 intentry CODE >384:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+B5 intentry CODE >389:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+B7 intentry CODE >394:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+B9 intentry CODE >399:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+BB intentry CODE >404:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+BD intentry CODE >409:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+BF intentry CODE >414:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+C1 intentry CODE >366:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+CE intentry CODE >421:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+CF intentry CODE >427:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+D1 intentry CODE >432:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+D3 intentry CODE >437:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+D5 intentry CODE >442:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+D7 intentry CODE >447:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+D9 intentry CODE >452:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+DB intentry CODE >457:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+DD intentry CODE >462:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+DF intentry CODE >467:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+E1 intentry CODE >472:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+E3 intentry CODE >424:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F0 intentry CODE >479:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F1 intentry CODE >485:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F3 intentry CODE >490:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F5 intentry CODE >495:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F7 intentry CODE >500:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F9 intentry CODE >505:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FB intentry CODE >510:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FD intentry CODE >515:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FF intentry CODE >520:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+101 intentry CODE >525:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+103 intentry CODE >530:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+105 intentry CODE >482:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+112 intentry CODE >538:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+113 intentry CODE >544:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+115 intentry CODE >549:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+117 intentry CODE >554:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+119 intentry CODE >559:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+11B intentry CODE >564:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+11D intentry CODE >569:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+11F intentry CODE >574:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+121 intentry CODE >579:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+123 intentry CODE >584:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+125 intentry CODE >589:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+127 intentry CODE >541:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+134 intentry CODE >596:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+135 intentry CODE >602:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+137 intentry CODE >607:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+139 intentry CODE >612:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+13B intentry CODE >617:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+13D intentry CODE >622:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+13F intentry CODE >627:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+141 intentry CODE >632:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+143 intentry CODE >637:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+145 intentry CODE >642:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+147 intentry CODE >647:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+149 intentry CODE >599:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+156 intentry CODE >654:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+157 intentry CODE >660:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+159 intentry CODE >665:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+15B intentry CODE >666:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+15D intentry CODE >670:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+15F intentry CODE >671:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+161 intentry CODE >675:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+163 intentry CODE >676:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+165 intentry CODE >680:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+167 intentry CODE >681:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+168 intentry CODE >682:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+169 intentry CODE >685:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+16B intentry CODE >686:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+16D intentry CODE >690:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+16F intentry CODE >691:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+171 intentry CODE >695:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+173 intentry CODE >696:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+175 intentry CODE >700:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+177 intentry CODE >701:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+179 intentry CODE >705:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+17B intentry CODE >706:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+17D intentry CODE >657:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+18A intentry CODE >712:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+18B intentry CODE >718:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+18D intentry CODE >719:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+18F intentry CODE >723:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+191 intentry CODE >724:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+193 intentry CODE >728:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+195 intentry CODE >729:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+197 intentry CODE >733:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+199 intentry CODE >734:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+19B intentry CODE >738:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+19D intentry CODE >739:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+19F intentry CODE >743:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1A1 intentry CODE >744:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1A3 intentry CODE >748:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1A5 intentry CODE >749:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1A7 intentry CODE >753:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1A9 intentry CODE >754:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1AB intentry CODE >758:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1AD intentry CODE >759:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1AF intentry CODE >764:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1B1 intentry CODE >765:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1B3 intentry CODE >766:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1B4 intentry CODE >771:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1B5 intentry CODE >715:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1C2 intentry CODE >775:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1C3 intentry CODE >182:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1D0 intentry CODE >779:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1D0 intentry CODE >783:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1D2 intentry CODE >784:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1D5 intentry CODE >785:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1D6 intentry CODE >786:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1D7 intentry CODE >788:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1E8 intentry CODE >789:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1EC intentry CODE >791:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1F5 intentry CODE >795:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1FA intentry CODE >796:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+1FE intentry CODE >797:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+209 intentry CODE >798:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+20E intentry CODE >799:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+210 intentry CODE >800:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+211 intentry CODE >802:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+212 intentry CODE >803:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+212 intentry CODE >804:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+214 intentry CODE >805:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+215 intentry CODE >806:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+217 intentry CODE >808:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+228 intentry CODE >809:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+22B intentry CODE >812:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F4C text17 CODE >1314:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F4D text17 CODE >1315:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F4F text17 CODE >1316:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F54 text17 CODE >1318:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F57 text17 CODE >1319:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F5C text17 CODE >1320:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F60 text17 CODE >1321:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F64 text17 CODE >1316:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+8B4 swtext11 CONST >182:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+8A0 swtext10 CONST >715:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+88C swtext9 CONST >657:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+878 swtext8 CONST >599:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+864 swtext7 CONST >541:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+850 swtext6 CONST >482:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+83C swtext5 CONST >424:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+828 swtext4 CONST >366:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+814 swtext3 CONST >307:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+800 swtext2 CONST >248:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7EC swtext1 CONST >186:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ECA text15 CODE >1373:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ECA text15 CODE >1374:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ECC text15 CODE >1375:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ECD text15 CODE >1376:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ECF text15 CODE >1377:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED0 text15 CODE >1378:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED1 text15 CODE >1379:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F21 text14 CODE >1356:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F21 text14 CODE >1357:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F25 text14 CODE >1359:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F27 text14 CODE >1361:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F2B text14 CODE >1363:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F2F text14 CODE >1365:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F33 text14 CODE >1367:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F35 text14 CODE >1368:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F65 text13 CODE >1138:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F65 text13 CODE >1139:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F68 text13 CODE >1140:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F6B text13 CODE >1141:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F6D text13 CODE >1142:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F6E text13 CODE >1143:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F6F text13 CODE >1144:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F70 text13 CODE >1145:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F72 text13 CODE >1147:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F74 text13 CODE >1148:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F75 text13 CODE >1149:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F77 text13 CODE >1150:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F78 text13 CODE >1151:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F79 text13 CODE >1154:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F7A text13 CODE >1156:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F7B text13 CODE >1157:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F7C text13 CODE >1159:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F7E text13 CODE >1160:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED2 text12 CODE >1273:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED2 text12 CODE >1277:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED5 text12 CODE >1280:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED6 text12 CODE >1283:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED7 text12 CODE >1289:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+ED9 text12 CODE >1292:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EDB text12 CODE >1293:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F36 text11 CODE >1175:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F36 text11 CODE >1176:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F38 text11 CODE >1177:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F39 text11 CODE >1182:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F3C text11 CODE >1185:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F3E text11 CODE >1188:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F40 text11 CODE >1193:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F42 text11 CODE >1195:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F44 text11 CODE >1198:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F45 text11 CODE >1201:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F46 text11 CODE >1204:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F48 text11 CODE >1207:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F4A text11 CODE >1210:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F4B text11 CODE >1211:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EDC text10 CODE >1212:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EDC text10 CODE >1215:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EDE text10 CODE >1218:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EDF text10 CODE >1221:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE0 text10 CODE >1224:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE1 text10 CODE >1227:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE2 text10 CODE >1230:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE4 text10 CODE >1236:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE5 text10 CODE >1239:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE6 text10 CODE >1241:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE7 text9 CODE >1243:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE7 text9 CODE >1246:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EE9 text9 CODE >1249:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EEA text9 CODE >1252:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EEB text9 CODE >1255:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EEC text9 CODE >1258:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EEE text9 CODE >1261:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF0 text9 CODE >1267:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF1 text9 CODE >1270:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF2 text9 CODE >1272:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF3 text8 CODE >1165:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF3 text8 CODE >1166:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF6 text8 CODE >1167:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EF9 text8 CODE >1168:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EFC text8 CODE >1169:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EFE text8 CODE >1170:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F7F text7 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F7F text7 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F82 text7 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F84 text7 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F88 text7 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F8D text7 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F92 text7 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+F96 text7 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\Umul16.c
+EFF text6 CODE >8:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
+F01 text6 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\isdigit.c
+71A text5 CODE >5:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+71C text5 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+723 text5 CODE >11:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+727 text5 CODE >10:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+72F text5 CODE >12:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+731 text5 CODE >13:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+732 text5 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+739 text5 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+73E text5 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+745 text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+749 text5 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+752 text5 CODE >20:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+76F text5 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+770 text5 CODE >21:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+774 text5 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+780 text5 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.45\sources\common\atoi.c
+FB8 text4 CODE >1334:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FBA text4 CODE >1335:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FBC text4 CODE >1336:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FC1 text4 CODE >1338:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FC4 text4 CODE >1340:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FCC text4 CODE >1341:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FD1 text4 CODE >1342:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FD5 text4 CODE >1336:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+638 text3 CODE >1037:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+63A text3 CODE >1041:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+63C text3 CODE >1042:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+63E text3 CODE >1043:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+640 text3 CODE >1044:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+642 text3 CODE >1047:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+646 text3 CODE >1048:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+64A text3 CODE >1050:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+64E text3 CODE >1051:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+652 text3 CODE >1052:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+65B text3 CODE >1056:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+662 text3 CODE >1059:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+666 text3 CODE >1060:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+66A text3 CODE >1061:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+673 text3 CODE >1065:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+67B text3 CODE >1069:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+689 text3 CODE >1070:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+696 text3 CODE >1071:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6A3 text3 CODE >1072:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6B0 text3 CODE >1073:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6B9 text3 CODE >1075:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6BD text3 CODE >1076:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6C1 text3 CODE >1078:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6C6 text3 CODE >1081:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6C7 text3 CODE >1083:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6CE text3 CODE >1084:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6CF text3 CODE >1086:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6D6 text3 CODE >1087:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6D7 text3 CODE >1089:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6DD text3 CODE >1091:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6DE text3 CODE >1094:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6E3 text3 CODE >1095:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6E4 text3 CODE >1114:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6E8 text3 CODE >1115:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6E9 text3 CODE >1116:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6E9 text3 CODE >1117:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6EA text3 CODE >1118:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6EB text3 CODE >1120:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6EF text3 CODE >1121:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6F3 text3 CODE >1125:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+6F4 text3 CODE >1115:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+701 text3 CODE >1130:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+702 text3 CODE >1081:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+719 text3 CODE >1132:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7BD text2 CODE >1346:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7BD text2 CODE >1347:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7C2 text2 CODE >1348:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7D1 text2 CODE >1349:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7DF text2 CODE >1350:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+7E7 text2 CODE >1348:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F9B text1 CODE >1324:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F9D text1 CODE >1325:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+F9F text1 CODE >1326:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FA4 text1 CODE >1328:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FA7 text1 CODE >1329:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FAE text1 CODE >1330:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FB3 text1 CODE >1331:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+FB7 text1 CODE >1326:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+267 maintext CODE >821:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+267 maintext CODE >823:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+27C maintext CODE >825:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+27F maintext CODE >826:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+282 maintext CODE >831:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+287 maintext CODE >832:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+289 maintext CODE >833:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+29A maintext CODE >834:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+29D maintext CODE >842:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2C6 maintext CODE >844:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2C7 maintext CODE >846:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2D8 maintext CODE >847:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2DC maintext CODE >848:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2DE maintext CODE >849:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2DF maintext CODE >850:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2ED maintext CODE >852:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+2F6 maintext CODE >850:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+305 maintext CODE >854:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+307 maintext CODE >855:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+308 maintext CODE >865:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+30D maintext CODE >866:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+319 maintext CODE >868:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+31D maintext CODE >870:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+326 maintext CODE >871:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+332 maintext CODE >872:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+33E maintext CODE >873:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+34A maintext CODE >874:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+356 maintext CODE >875:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+358 maintext CODE >877:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+35B maintext CODE >878:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+35F maintext CODE >882:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+36C maintext CODE >884:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+370 maintext CODE >886:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+379 maintext CODE >887:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+385 maintext CODE >888:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+391 maintext CODE >889:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+39D maintext CODE >890:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3A9 maintext CODE >891:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3AB maintext CODE >893:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3AE maintext CODE >894:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3B0 maintext CODE >899:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3BD maintext CODE >901:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3C1 maintext CODE >903:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3CA maintext CODE >904:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3D6 maintext CODE >905:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3E2 maintext CODE >906:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3EE maintext CODE >907:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3FA maintext CODE >908:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3FC maintext CODE >910:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+3FF maintext CODE >911:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+403 maintext CODE >914:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+410 maintext CODE >916:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+414 maintext CODE >918:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+41D maintext CODE >919:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+429 maintext CODE >920:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+435 maintext CODE >921:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+441 maintext CODE >922:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+44D maintext CODE >923:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+44F maintext CODE >925:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+452 maintext CODE >926:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+454 maintext CODE >932:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+461 maintext CODE >934:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+465 maintext CODE >936:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+46E maintext CODE >937:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+47A maintext CODE >938:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+486 maintext CODE >939:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+492 maintext CODE >940:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+49E maintext CODE >941:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4A0 maintext CODE >943:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4A2 maintext CODE >944:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4A6 maintext CODE >948:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4B3 maintext CODE >950:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4B7 maintext CODE >952:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4C0 maintext CODE >953:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4CC maintext CODE >954:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4D8 maintext CODE >955:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4E4 maintext CODE >956:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4F0 maintext CODE >957:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4F2 maintext CODE >959:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4F4 maintext CODE >960:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+4F6 maintext CODE >967:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+503 maintext CODE >969:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+507 maintext CODE >971:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+510 maintext CODE >972:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+51C maintext CODE >973:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+528 maintext CODE >974:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+534 maintext CODE >975:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+540 maintext CODE >976:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+542 maintext CODE >978:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+544 maintext CODE >979:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+548 maintext CODE >983:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+555 maintext CODE >985:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+559 maintext CODE >987:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+562 maintext CODE >988:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+56E maintext CODE >989:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+57A maintext CODE >990:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+586 maintext CODE >991:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+592 maintext CODE >992:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+594 maintext CODE >994:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+596 maintext CODE >995:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+598 maintext CODE >1001:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5A2 maintext CODE >1003:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5A6 maintext CODE >1005:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5A8 maintext CODE >1006:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5B1 maintext CODE >1007:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5BD maintext CODE >1008:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5C9 maintext CODE >1009:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5D5 maintext CODE >1010:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5E1 maintext CODE >1011:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5E3 maintext CODE >1013:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5E5 maintext CODE >1014:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5E9 maintext CODE >1018:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5F2 maintext CODE >1020:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5F6 maintext CODE >1022:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+5F8 maintext CODE >1023:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+601 maintext CODE >1024:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+60D maintext CODE >1025:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+619 maintext CODE >1026:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+625 maintext CODE >1027:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+631 maintext CODE >1028:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+633 maintext CODE >1030:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+635 maintext CODE >1031:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+637 maintext CODE >829:D:\ALFAONE\alfaone\VARUN\VARUN\GItHub\5onoff\5onoff.X\5onoff.c
+EC4 inittext CODE >904:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC4 inittext CODE >905:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC5 inittext CODE >906:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC5 inittext CODE >907:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC6 inittext CODE >908:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC7 inittext CODE >909:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC8 inittext CODE >910:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+EC9 inittext CODE >911:C:\Users\Alfaone\AppData\Local\Temp\s3rk.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+___latbits 2 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__LdataBANK2 0 0 ABS 0 dataBANK2 -
+__Hspace_0 8009 0 ABS 0 - -
+__Hspace_1 14A 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+__HidataBANK2 0 0 ABS 0 idataBANK2 -
+_ErrorNames 5B 0 BANK0 1 dataBANK0 dist/default/production\5onoff.X.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__end_of_allPeripheralInit 1DFE 0 CODE 0 text8 dist/default/production\5onoff.X.production.obj
+_T1CONbits 18 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+applianceControl@charSwitchSTATE 2F 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+_M1 68 0 BANK0 1 nvBANK0 dist/default/production\5onoff.X.production.obj
+_M2 66 0 BANK0 1 nvBANK0 dist/default/production\5onoff.X.production.obj
+_M3 64 0 BANK0 1 nvBANK0 dist/default/production\5onoff.X.production.obj
+_M4 62 0 BANK0 1 nvBANK0 dist/default/production\5onoff.X.production.obj
+_M5 60 0 BANK0 1 nvBANK0 dist/default/production\5onoff.X.production.obj
+__end_of_sendAcknowledgment 1FAC 0 CODE 0 text4 dist/default/production\5onoff.X.production.obj
+applianceControl@currentStateBufferPositions 41 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+_PEIE 5E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_WPUB 20D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_WPUD 20F 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_WPUE 210 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_WPUG 48D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+_atoi E34 0 CODE 0 text5 dist/default/production\5onoff.X.production.obj
+_main 4CE 0 CODE 0 maintext dist/default/production\5onoff.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+start 460 0 CODE 0 init C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+_mainReceivedDataPosition 78 0 COMMON 1 bssCOMMON dist/default/production\5onoff.X.production.obj
+_GPIO_pin_Initialize 1ECA 0 CODE 0 text13 dist/default/production\5onoff.X.production.obj
+__size_of_clearAllPorts 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__size_of_atoi 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+errorsISR@Tx_count 71 0 COMMON 1 cstackCOMMON dist/default/production\5onoff.X.production.obj
+?___wmul 20 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+_currentStateBuffer 120 0 BANK2 1 dataBANK2 dist/default/production\5onoff.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__LidataBANK2 0 0 ABS 0 idataBANK2 -
+applianceControl@charFinalFrameState 33 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__end_of_EUSART_Initialize 1E98 0 CODE 0 text11 dist/default/production\5onoff.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__size_of_TMR1_Initialize 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+applianceControl@integerSwitchNumber 3D 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+applianceControl@integerSwitchState 3F 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+_sendAcknowledgment 1F70 0 CODE 0 text4 dist/default/production\5onoff.X.production.obj
+intlevel0 0 0 ENTRY 0 functab C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+intlevel1 0 0 ENTRY 0 functab C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+intlevel2 0 0 ENTRY 0 functab C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+intlevel3 0 0 ENTRY 0 functab C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+intlevel4 0 0 ENTRY 0 functab C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+intlevel5 0 0 ENTRY 0 functab C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_errorsISR 1ECA 0 CODE 0 text17 dist/default/production\5onoff.X.production.obj
+__end_of_clearAllPorts 1DA4 0 CODE 0 text15 dist/default/production\5onoff.X.production.obj
+_levelofDimmer_LSB 7A 0 COMMON 1 dataCOMMON dist/default/production\5onoff.X.production.obj
+_levelofDimmer_MSB 7B 0 COMMON 1 dataCOMMON dist/default/production\5onoff.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__size_of_errorsISR 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Hfunctab 0 0 ENTRY 0 functab -
+_RC1STAbits 19D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+applianceControl@dimmerSpeedStringBuffer 3B 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+__pidataCOMMON 4 0 CODE 0 idataCOMMON dist/default/production\5onoff.X.production.obj
+___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__end_of_TMR3_Initialize 1DE6 0 CODE 0 text9 dist/default/production\5onoff.X.production.obj
+_ANSELA 18C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_ANSELB 18D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_ANSELD 18F 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_ANSELE 190 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_ANSELF 40C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_ANSELG 40D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_errorsISR 1E98 0 CODE 0 text17 dist/default/production\5onoff.X.production.obj
+__size_of_copyReceivedDataBuffer 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+_CCP9IF A6 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_CCPR9H 61B 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_CCPR9L 61A 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__end_of___wmul 1F36 0 CODE 0 text7 dist/default/production\5onoff.X.production.obj
+_allPeripheralInit 1DE6 0 CODE 0 text8 dist/default/production\5onoff.X.production.obj
+_applianceControl C70 0 CODE 0 text3 dist/default/production\5onoff.X.production.obj
+main@man 4B 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+__LnvBANK0 0 0 ABS 0 nvBANK0 -
+__size_of_isdigit 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__end_of_GPIO_pin_Initialize 1EFE 0 CODE 0 text13 dist/default/production\5onoff.X.production.obj
+applianceControl@integerSpeed 36 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+_EUSART_Initialize 1E6C 0 CODE 0 text11 dist/default/production\5onoff.X.production.obj
+applianceControl@charParentalControl 32 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+_TMR3_Initialize 1DCE 0 CODE 0 text9 dist/default/production\5onoff.X.production.obj
+_pinINIT_extra 1E42 0 CODE 0 text14 dist/default/production\5onoff.X.production.obj
+__CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+start_initialization 464 0 CODE 0 cinit dist/default/production\5onoff.X.production.obj
+_TRISAbits 8C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TRISCbits 8E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TRISEbits 90 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TRISFbits 30C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_RC1REG 199 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_RC1STA 19D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__CFG_STVREN$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+copyReceivedDataBuffer@dataBufferCounter 21 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+_T1GCON 19 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_T3GCON 414 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TX1REG 19A 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TX1STA 19E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_isdigit$859 20 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__end_of_applianceControl E34 0 CODE 0 text3 dist/default/production\5onoff.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hbank4 0 0 ABS 0 bank4 -
+__Hbank5 0 0 ABS 0 bank5 -
+__Hbank6 0 0 ABS 0 bank6 -
+__Hbank7 0 0 ABS 0 bank7 -
+__Hbank8 0 0 ABS 0 bank8 -
+__Hbank9 0 0 ABS 0 bank9 -
+__Hcinit 4CE 0 CODE 0 cinit -
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hsfr10 0 0 ABS 0 sfr10 -
+__Hsfr11 0 0 ABS 0 sfr11 -
+__Hsfr12 0 0 ABS 0 sfr12 -
+__Hsfr13 0 0 ABS 0 sfr13 -
+__Hsfr14 0 0 ABS 0 sfr14 -
+__Hsfr15 0 0 ABS 0 sfr15 -
+__Hsfr16 0 0 ABS 0 sfr16 -
+__Hsfr17 0 0 ABS 0 sfr17 -
+__Hsfr18 0 0 ABS 0 sfr18 -
+__Hsfr19 0 0 ABS 0 sfr19 -
+__Hsfr20 0 0 ABS 0 sfr20 -
+__Hsfr21 0 0 ABS 0 sfr21 -
+__Hsfr22 0 0 ABS 0 sfr22 -
+__Hsfr23 0 0 ABS 0 sfr23 -
+__Hsfr24 0 0 ABS 0 sfr24 -
+__Hsfr25 0 0 ABS 0 sfr25 -
+__Hsfr26 0 0 ABS 0 sfr26 -
+__Hsfr27 0 0 ABS 0 sfr27 -
+__Hsfr28 0 0 ABS 0 sfr28 -
+__Hsfr29 0 0 ABS 0 sfr29 -
+__Hsfr30 0 0 ABS 0 sfr30 -
+__Hsfr31 0 0 ABS 0 sfr31 -
+__Hstack 0 0 STACK 2 stack -
+__Hbank10 0 0 BANK10 1 bank10 -
+__Hbank11 0 0 BANK11 1 bank11 -
+__Hbank12 0 0 BANK12 1 bank12 -
+__Hbank13 0 0 BANK13 1 bank13 -
+__Hbank14 0 0 BANK14 1 bank14 -
+__Hbank15 0 0 BANK15 1 bank15 -
+__Hbank16 0 0 BANK16 1 bank16 -
+__Hbank17 0 0 BANK17 1 bank17 -
+__Hbank18 0 0 BANK18 1 bank18 -
+__Hbank19 0 0 BANK19 1 bank19 -
+__Hbank20 0 0 BANK20 1 bank20 -
+__Hbank21 0 0 BANK21 1 bank21 -
+__Hbank22 0 0 BANK22 1 bank22 -
+__Hbank23 0 0 BANK23 1 bank23 -
+__Hbank24 0 0 BANK24 1 bank24 -
+__Hbank25 0 0 BANK25 1 bank25 -
+__Hbank26 0 0 BANK26 1 bank26 -
+__Hbank27 0 0 BANK27 1 bank27 -
+__Hbank28 0 0 BANK28 1 bank28 -
+__Hbank29 0 0 BANK29 1 bank29 -
+__Hbank30 0 0 BANK30 1 bank30 -
+__Hbank31 0 0 BANK31 1 bank31 -
+__Hbigram 0 0 ABS 0 bigram -
+__Hmaintext 0 0 ABS 0 maintext -
+__size_of_applianceControl 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_BAUD1CON 19F 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_tempReceivedDataBuffer C0 0 BANK1 1 dataBANK1 dist/default/production\5onoff.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 10012 0 CONFIG 0 config -
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lbank4 0 0 ABS 0 bank4 -
+__Lbank5 0 0 ABS 0 bank5 -
+__Lbank6 0 0 ABS 0 bank6 -
+__Lbank7 0 0 ABS 0 bank7 -
+__Lbank8 0 0 ABS 0 bank8 -
+__Lbank9 0 0 ABS 0 bank9 -
+__end_of_isdigit 1E1C 0 CODE 0 text6 dist/default/production\5onoff.X.production.obj
+__Lcinit 464 0 CODE 0 cinit -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Lsfr10 0 0 ABS 0 sfr10 -
+__Lsfr11 0 0 ABS 0 sfr11 -
+__Lsfr12 0 0 ABS 0 sfr12 -
+__Lsfr13 0 0 ABS 0 sfr13 -
+__Lsfr14 0 0 ABS 0 sfr14 -
+__Lsfr15 0 0 ABS 0 sfr15 -
+__Lsfr16 0 0 ABS 0 sfr16 -
+__Lsfr17 0 0 ABS 0 sfr17 -
+__Lsfr18 0 0 ABS 0 sfr18 -
+__Lsfr19 0 0 ABS 0 sfr19 -
+__Lsfr20 0 0 ABS 0 sfr20 -
+__Lsfr21 0 0 ABS 0 sfr21 -
+__Lsfr22 0 0 ABS 0 sfr22 -
+__Lsfr23 0 0 ABS 0 sfr23 -
+__Lsfr24 0 0 ABS 0 sfr24 -
+__Lsfr25 0 0 ABS 0 sfr25 -
+__Lsfr26 0 0 ABS 0 sfr26 -
+__Lsfr27 0 0 ABS 0 sfr27 -
+__Lsfr28 0 0 ABS 0 sfr28 -
+__Lsfr29 0 0 ABS 0 sfr29 -
+__Lsfr30 0 0 ABS 0 sfr30 -
+__Lsfr31 0 0 ABS 0 sfr31 -
+__Lstack 0 0 STACK 2 stack -
+init_ram 1D88 0 CODE 0 inittext dist/default/production\5onoff.X.production.obj
+_mainReceivedDataBuffer A0 0 BANK1 1 dataBANK1 dist/default/production\5onoff.X.production.obj
+main@dataBufferCounter 49 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__Linittext 0 0 ABS 0 inittext -
+_PORTAbits C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_PORTEbits 10 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_PORTFbits 28C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 460 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Hsfr4 0 0 ABS 0 sfr4 -
+__Hsfr5 0 0 ABS 0 sfr5 -
+__Hsfr6 0 0 ABS 0 sfr6 -
+__Hsfr7 0 0 ABS 0 sfr7 -
+__Hsfr8 0 0 ABS 0 sfr8 -
+__Hsfr9 0 0 ABS 0 sfr9 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 460 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Lsfr4 0 0 ABS 0 sfr4 -
+__Lsfr5 0 0 ABS 0 sfr5 -
+__Lsfr6 0 0 ABS 0 sfr6 -
+__Lsfr7 0 0 ABS 0 sfr7 -
+__Lsfr8 0 0 ABS 0 sfr8 -
+__Lsfr9 0 0 ABS 0 sfr9 -
+__Ltext 0 0 ABS 0 text -
+__pnvBANK0 60 0 BANK0 1 nvBANK0 dist/default/production\5onoff.X.production.obj
+___wmul 1EFE 0 CODE 0 text7 dist/default/production\5onoff.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+int$flags 7E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_GIE 5F 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__S0 8009 0 ABS 0 - -
+__S1 14A 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+_isr 8 0 CODE 0 intentry dist/default/production\5onoff.X.production.obj
+atoi@sign 2A 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+errorsMain@Tx_count 21 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+applianceControl@chDimmerSpeedLSB 31 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+applianceControl@chDimmerSpeedMSB 30 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__size_of_sendAcknowledgment 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__size_of_TMR3_Initialize 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__size_of_pinINIT_extra 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+_errorsMain 1F36 0 CODE 0 text1 dist/default/production\5onoff.X.production.obj
+__end_of_isr 460 0 CODE 0 intentry dist/default/production\5onoff.X.production.obj
+__HnvBANK0 0 0 ABS 0 nvBANK0 -
+__Lintentry 8 0 CODE 0 intentry -
+__end_of_CCP9_Initialize 1DB8 0 CODE 0 text12 dist/default/production\5onoff.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+errorsISR@errNum 73 0 COMMON 1 cstackCOMMON dist/default/production\5onoff.X.production.obj
+__pdataBANK0 4D 0 BANK0 1 dataBANK0 dist/default/production\5onoff.X.production.obj
+__pdataBANK1 A0 0 BANK1 1 dataBANK1 dist/default/production\5onoff.X.production.obj
+__pdataBANK2 120 0 BANK2 1 dataBANK2 dist/default/production\5onoff.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__end_of_pinINIT_extra 1E6C 0 CODE 0 text14 dist/default/production\5onoff.X.production.obj
+_copyReceivedDataBuffer F7A 0 CODE 0 text2 dist/default/production\5onoff.X.production.obj
+_PIE1bits 91 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_PIE3bits 93 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_PIE4bits 94 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_parentalLockBuffer 4D 0 BANK0 1 dataBANK0 dist/default/production\5onoff.X.production.obj
+__ptext10 1DB8 0 CODE 0 text10 dist/default/production\5onoff.X.production.obj
+__ptext11 1E6C 0 CODE 0 text11 dist/default/production\5onoff.X.production.obj
+__ptext12 1DA4 0 CODE 0 text12 dist/default/production\5onoff.X.production.obj
+__ptext13 1ECA 0 CODE 0 text13 dist/default/production\5onoff.X.production.obj
+__ptext14 1E42 0 CODE 0 text14 dist/default/production\5onoff.X.production.obj
+__ptext15 1D94 0 CODE 0 text15 dist/default/production\5onoff.X.production.obj
+__ptext17 1E98 0 CODE 0 text17 dist/default/production\5onoff.X.production.obj
+__Lbank10 0 0 BANK10 1 bank10 -
+__Lbank11 0 0 BANK11 1 bank11 -
+__Lbank12 0 0 BANK12 1 bank12 -
+__Lbank13 0 0 BANK13 1 bank13 -
+__Lbank14 0 0 BANK14 1 bank14 -
+__Lbank15 0 0 BANK15 1 bank15 -
+__Lbank16 0 0 BANK16 1 bank16 -
+__Lbank17 0 0 BANK17 1 bank17 -
+__Lbank18 0 0 BANK18 1 bank18 -
+__Lbank19 0 0 BANK19 1 bank19 -
+__Lbank20 0 0 BANK20 1 bank20 -
+__Lbank21 0 0 BANK21 1 bank21 -
+__Lbank22 0 0 BANK22 1 bank22 -
+__Lbank23 0 0 BANK23 1 bank23 -
+__Lbank24 0 0 BANK24 1 bank24 -
+__Lbank25 0 0 BANK25 1 bank25 -
+__Lbank26 0 0 BANK26 1 bank26 -
+__Lbank27 0 0 BANK27 1 bank27 -
+__Lbank28 0 0 BANK28 1 bank28 -
+__Lbank29 0 0 BANK29 1 bank29 -
+__Lbank30 0 0 BANK30 1 bank30 -
+__Lbank31 0 0 BANK31 1 bank31 -
+__pmaintext 4CE 0 CODE 0 maintext dist/default/production\5onoff.X.production.obj
+__Lbigram 0 0 ABS 0 bigram -
+__CFG_BORV$LO 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+?_atoi 26 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 1000E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+applianceControl@charSwitchLSB 2E 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+applianceControl@charSwitchMSB 38 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Hinittext 0 0 ABS 0 inittext -
+_start_PWM_Generation_in_ISR_FLAG 76 0 COMMON 1 bssCOMMON dist/default/production\5onoff.X.production.obj
+___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+applianceControl@switchNumberStringBuffer 39 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__end_of_errorsMain 1F70 0 CODE 0 text1 dist/default/production\5onoff.X.production.obj
+_CCP9_Initialize 1DA4 0 CODE 0 text12 dist/default/production\5onoff.X.production.obj
+__CFG_VCAPEN$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+stackhi 22EF 0 ABS 0 - C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+stacklo 20CA 0 ABS 0 - C:\Users\Alfaone\AppData\Local\Temp\s3rk.obj
+sendAcknowledgment@currentStateBuffer 23 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__pbssCOMMON 76 0 COMMON 1 bssCOMMON dist/default/production\5onoff.X.production.obj
+errorsMain@errNum 23 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+_PIR1bits 11 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_PIR3bits 13 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_PIR4bits 14 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Lend_init 460 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+applianceControl@F3766 59 0 BANK0 1 dataBANK0 dist/default/production\5onoff.X.production.obj
+applianceControl@F3768 57 0 BANK0 1 dataBANK0 dist/default/production\5onoff.X.production.obj
+end_of_initialization 4C6 0 CODE 0 cinit dist/default/production\5onoff.X.production.obj
+__Hintentry 460 0 CODE 0 intentry -
+_TX1STAbits 19E 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Lstrings 0 0 ABS 0 strings -
+__Hreset_vec 4 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__ptext1 1F36 0 CODE 0 text1 dist/default/production\5onoff.X.production.obj
+__ptext2 F7A 0 CODE 0 text2 dist/default/production\5onoff.X.production.obj
+__ptext3 C70 0 CODE 0 text3 dist/default/production\5onoff.X.production.obj
+__ptext4 1F70 0 CODE 0 text4 dist/default/production\5onoff.X.production.obj
+__ptext5 E34 0 CODE 0 text5 dist/default/production\5onoff.X.production.obj
+__ptext6 1DFE 0 CODE 0 text6 dist/default/production\5onoff.X.production.obj
+__ptext7 1EFE 0 CODE 0 text7 dist/default/production\5onoff.X.production.obj
+__ptext8 1DE6 0 CODE 0 text8 dist/default/production\5onoff.X.production.obj
+__ptext9 1DCE 0 CODE 0 text9 dist/default/production\5onoff.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+_isdigit 1DFE 0 CODE 0 text6 dist/default/production\5onoff.X.production.obj
+__size_of_allPeripheralInit 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__end_of_TMR1_Initialize 1DCE 0 CODE 0 text10 dist/default/production\5onoff.X.production.obj
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__CFG_LPBOR$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__end_of__initialization 4C6 0 CODE 0 cinit dist/default/production\5onoff.X.production.obj
+__Lfunctab 0 0 ENTRY 0 functab -
+sendAcknowledgment@Tx_count 21 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__pidataBANK0 1E1C 0 CODE 0 idataBANK0 dist/default/production\5onoff.X.production.obj
+__pidataBANK1 F0A 0 CODE 0 idataBANK1 dist/default/production\5onoff.X.production.obj
+__pidataBANK2 1FAC 0 CODE 0 idataBANK2 dist/default/production\5onoff.X.production.obj
+_SP1BRGH 19C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_SP1BRGL 19B 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+__size_of_CCP9_Initialize 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_clearAllPorts 1D94 0 CODE 0 text15 dist/default/production\5onoff.X.production.obj
+__pswtext10 1140 0 CONST 0 swtext10 dist/default/production\5onoff.X.production.obj
+__pswtext11 1168 0 CONST 0 swtext11 dist/default/production\5onoff.X.production.obj
+__size_of_EUSART_Initialize 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\5onoff.X.production.obj
+_T3CONbits 413 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__end_of_copyReceivedDataBuffer FD8 0 CODE 0 text2 dist/default/production\5onoff.X.production.obj
+__Hend_init 464 0 CODE 0 end_init -
+__end_of_atoi F0A 0 CODE 0 text5 dist/default/production\5onoff.X.production.obj
+__end_of_main C70 0 CODE 0 maintext dist/default/production\5onoff.X.production.obj
+isdigit@c 21 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+_mainDataReceived 6A 0 BANK0 1 bssBANK0 dist/default/production\5onoff.X.production.obj
+_RC1IF 8D 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_T1CON 18 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_T3CON 413 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TMR1H 17 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TMR1L 16 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TMR3H 412 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+_TMR3L 411 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_TMR1_Initialize 1DB8 0 CODE 0 text10 dist/default/production\5onoff.X.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\5onoff.X.production.obj
+_CCP9CON 61C 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__size_of_isr 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__HdataBANK2 0 0 ABS 0 dataBANK2 -
+atoi@a 2B 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+atoi@s 2D 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__initialization 464 0 CODE 0 cinit dist/default/production\5onoff.X.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__pbssBANK0 6A 0 BANK0 1 bssBANK0 dist/default/production\5onoff.X.production.obj
+__size_of_GPIO_pin_Initialize 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__pdataCOMMON 7A 0 COMMON 1 dataCOMMON dist/default/production\5onoff.X.production.obj
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+___wmul@product 24 0 BANK0 1 cstackBANK0 dist/default/production\5onoff.X.production.obj
+__size_of_errorsMain 0 0 ABS 0 - dist/default/production\5onoff.X.production.obj
+__pswtext1 FD8 0 CONST 0 swtext1 dist/default/production\5onoff.X.production.obj
+__pswtext2 1000 0 CONST 0 swtext2 dist/default/production\5onoff.X.production.obj
+__pswtext3 1028 0 CONST 0 swtext3 dist/default/production\5onoff.X.production.obj
+__pswtext4 1050 0 CONST 0 swtext4 dist/default/production\5onoff.X.production.obj
+__pswtext5 1078 0 CONST 0 swtext5 dist/default/production\5onoff.X.production.obj
+__pswtext6 10A0 0 CONST 0 swtext6 dist/default/production\5onoff.X.production.obj
+__pswtext7 10C8 0 CONST 0 swtext7 dist/default/production\5onoff.X.production.obj
+__pswtext8 10F0 0 CONST 0 swtext8 dist/default/production\5onoff.X.production.obj
+__pswtext9 1118 0 CONST 0 swtext9 dist/default/production\5onoff.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text1 0 F9B 1F36 1D 2
+text4 0 FB8 1F70 1E 2
+text6 0 EFF 1DFE F 2
+text7 0 F7F 1EFE 1C 2
+text8 0 EF3 1DE6 C 2
+text9 0 EE7 1DCE C 2
+text10 0 EDC 1DB8 B 2
+text11 0 F36 1E6C 16 2
+text12 0 ED2 1DA4 A 2
+text13 0 F65 1ECA 1A 2
+text14 0 F21 1E42 15 2
+text15 0 ECA 1D94 8 2
+text17 0 F4C 1E98 19 2
+cstackCOMMON 1 70 70 C 1
+cstackBANK0 1 20 20 4C 1
+inittext 0 EC4 1D88 6 2
+intentry 0 4 8 7E8 2
+reset_vec 0 0 0 4 2
+idataBANK0 0 F0E 1E1C 13 2
+idataBANK2 0 FD6 1FAC 2A 2
+swtext1 0 7EC FD8 DC 2
+dataBANK1 1 A0 A0 38 1
+dataBANK2 1 120 120 2A 1
+config 0 8007 1000E 2 2
