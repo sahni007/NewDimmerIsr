@@ -1,3 +1,12 @@
+/*
+ * File:   main.c
+ * Author: varun.sahni04@gmail.com
+ *
+ * Created on 2/7/2019 6:25:38 PM UTC
+ * "Created in MPLAB Xpress"
+ */
+
+
 /* 
  * File:   varun_4_1.c
  * Author: VARUNS SAHNI
@@ -10,7 +19,9 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include<string.h>
+#include<math.h>
+#include<float.h>
 // 'C' source line config statements
 
 // CONFIG1
@@ -127,7 +138,7 @@ unsigned int M1;unsigned int M2;unsigned int M3;unsigned int M4;unsigned int M5;
 
 int start_PWM_Generation_in_ISR_FLAG=FALSE;
 char levelofDimmer_MSB='0',levelofDimmer_LSB='0';
-
+int TimerH=0,TimerL=0;
 void errorsISR(char* errNum);
 void errorsMain(char* errNum);
 void sendAcknowledgment(char* currentStateBuffer);
@@ -148,10 +159,10 @@ void copyReceivedDataBuffer();
 
 void applianceControl(char switchMSB, char switchLSB, char switchSTATE, char dimmerSpeedMSB, char dimmerSpeedLSB, char parentalControl, char finalFrameState);
 
+int hexadecimalToDecimal(char hexVal[]) ;
 
 
-
-interrupt void isr(){
+ interrupt void isr() {
     //*******************TIMER3 INTERRUPT**************************//
      if(PIE3bits.TMR3IE==1 && PIR3bits.TMR3IF==1)
     {           
@@ -179,601 +190,10 @@ interrupt void isr(){
         if(CCP9IF == 1){
              CCP9IF=0;
          if(start_PWM_Generation_in_ISR_FLAG == 1){
-          switch(levelofDimmer_MSB)
-                {
-                case '0':           // 8.5
-                    /**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 8.5
-                                    
-                                    TMR1H = 123;
-                                    TMR1L = 48;
+                                    TMR1H = TimerH;
+                                    TMR1L = TimerL;
                                     T1CONbits.TMR1ON = 1;
-                                  //   OUTPUT_DIMMER=1;
-                                     break;
-                             case '1':           // 8.4
-                                     TMR1H=124;
-                                     TMR1L=192;
-                                     T1CONbits.TMR1ON = 1;
-                                    // OUTPUT_DIMMER=1;
-                                     break;
-                             case '2':           // 8.35
-                                     TMR1H=125;
-                                     TMR1L=136;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 8.25
-                                     TMR1H=127;
-                                     TMR1L=24;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4':          // 8.15
-                                     TMR1H=128;
-                                     TMR1L=168;
-                                    T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 8.1
-                                     TMR1H=129;
-                                     TMR1L=112;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 8.0    
-                                     TMR1H=131;
-                                     TMR1L=0;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //7.95
-                                     TMR1H=131;
-                                     TMR1L=200;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           //7.9
-                                     TMR1H=135;
-                                     TMR1L=176;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 7.85
-                                     TMR1H=133;
-                                     TMR1L=88;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-
-                             default:
-                                 break;
-                         }                    
-                        break;
-                case '1':           // 7.8-7.3
-
-                            switch(levelofDimmer_LSB)
-                                 {
-                                 case '0':           // 7.8
-                                         TMR1H=134;
-                                         TMR1L=32;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '1':           // 7.75
-                                         TMR1H=134;
-                                         TMR1L=232;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '2':           // 7.7
-                                         TMR1H=135;
-                                         TMR1L=176;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '3':           // 7.65
-                                         TMR1H=136;
-                                         TMR1L=120;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '4':            // 7.6
-                                         TMR1H=137;
-                                         TMR1L=64;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '5':               // 7.55
-                                         TMR1H=138;
-                                         TMR1L=8;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '6':               // 7.5    
-                                         TMR1H=138;
-                                         TMR1L=208;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '7':            //7.45
-                                         TMR1H=139;
-                                         TMR1L=152;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '8':           //7.4
-                                         TMR1H=140;
-                                         TMR1L=96;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-                                 case '9':           // 7.35
-                                         TMR1H=141;
-                                         TMR1L=40;
-                                         T1CONbits.TMR1ON = 1;
-                                         break;
-
-                                 default:
-                                     break;
-                                }
-                        break;
-                case '2':           // 7.3-
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 7.3-6.85
-                                     TMR1H=141;
-                                     TMR1L=240;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 7.25
-                                     TMR1H=142;
-                                     TMR1L=184;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 7.20
-                                     TMR1H=143;
-                                     TMR1L=128;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 7.15
-                                     TMR1H=144;
-                                     TMR1L=72;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 7.1
-                                     TMR1H=145;
-                                     TMR1L=16;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 7.05
-                                     TMR1H=145;
-                                     TMR1L=216;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 7.0    
-                                     TMR1H=146;
-                                     TMR1L=160;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //6.95
-                                     TMR1H=147;
-                                     TMR1L=104;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           //6.9
-                                     TMR1H=148;
-                                     TMR1L=48;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 6.85
-                                     TMR1H=148;
-                                     TMR1L=250;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-
-                             default:
-                                 break;
-                         }                    
-                        break;
-                case '3':           // 6.8-5.9                
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 6.8
-                                     TMR1H=149;
-                                     TMR1L=192;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 6.7
-                                     TMR1H=151;
-                                     TMR1L=80;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 6.6
-                                     TMR1H=152;
-                                     TMR1L=224;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 6.5
-                                     TMR1H=154;
-                                     TMR1L=112;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 6.4
-                                     TMR1H=156;
-                                     TMR1L=0;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 6.3
-                                     TMR1H=157;
-                                     TMR1L=144;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 6.2   
-                                     TMR1H=159;
-                                     TMR1L=32;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //6.1
-                                     TMR1H=160;
-                                     TMR1L=176;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           //6.0
-                                     TMR1H=162;
-                                     TMR1L=64;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 5.9
-                                     TMR1H=163;
-                                     TMR1L=208;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             default:
-                                     break;
-                            }
-                        break;
-                case '4'://TX1REG='n';      // 5.8-4.9                    
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 5.8
-                                     TMR1H=165;
-                                     TMR1L=96;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 5.7
-                                     TMR1H=166;
-                                     TMR1L=240;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 5.6
-                                     TMR1H=168;
-                                     TMR1L=128;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 5.5
-                                     TMR1H=171;
-                                     TMR1L=16;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4':           // 5.4
-                                     TMR1H=172;
-                                     TMR1L=160;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 5.3
-                                     TMR1H=173;
-                                     TMR1L=48;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 5.2    
-                                     TMR1H=174;
-                                     TMR1L=192;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':              // 5.1
-                                     TMR1H=176;
-                                     TMR1L=80;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':              // 5.0
-                                     TMR1H=177;
-                                     TMR1L=224;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':              // 4.9
-                                     TMR1H=179;
-                                     TMR1L=112;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             default:
-                                     break;
-                         }
-                        break;
-                case '5':               // 4.8-3.9
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 4.8
-                                     TMR1H=181;
-                                     TMR1L=0;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 4.7
-                                     TMR1H=182;
-                                     TMR1L=144;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 4.6
-                                     TMR1H=184;
-                                     TMR1L=32;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 4.5
-                                     TMR1H=185;
-                                     TMR1L=176;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 4.4
-                                     TMR1H=187;
-                                     TMR1L=64;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 4.3
-                                     TMR1H=188;
-                                     TMR1L=208;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 4.2   
-                                     TMR1H=189;
-                                     TMR1L=96;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //4.1
-                                     TMR1H=190;
-                                     TMR1L=240;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           //4.0
-                                     TMR1H=191;
-                                     TMR1L=128;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 3.9
-                                     TMR1H=195;
-                                     TMR1L=16;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-
-                             default:
-                                 break;
-                            }                    
-                        break;
-                case '6':               // 3.8-2.9 
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 3.8
-                                     TMR1H=196;
-                                     TMR1L=160;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 3.7
-                                     TMR1H=198;
-                                     TMR1L=48;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 3.6
-                                     TMR1H=199;
-                                     TMR1L=190;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 3.5
-                                     TMR1H=201;
-                                     TMR1L=80;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 3.4
-                                     TMR1H=202;
-                                     TMR1L=224;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 3.3
-                                     TMR1H=204;
-                                     TMR1L=112;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 3.2   
-                                     TMR1H=206;
-                                     TMR1L=0;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //3.1
-                                     TMR1H=207;
-                                     TMR1L=144;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           // 3.0
-                                     TMR1H=209;
-                                     TMR1L=32;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 2.9
-                                     TMR1H=210;
-                                     TMR1L=176;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             default:
-                                     break;
-                            }                    
-                        break;
-                case '7':            //2.8-1.9
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 2.8
-                                     TMR1H=212;
-                                     TMR1L=64;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 2.7
-                                     TMR1H=213;
-                                     TMR1L=208;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 2.6
-                                     TMR1H=215;
-                                     TMR1L=96;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 2.5
-                                     TMR1H=216;
-                                     TMR1L=240;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 2.4
-                                     TMR1H=219;
-                                     TMR1L=128;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 2.3
-                                     TMR1H=221;
-                                     TMR1L=16;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 2.2  
-                                     TMR1H=222;
-                                     TMR1L=0xA0;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            // 2.1
-                                     TMR1H=224;
-                                     TMR1L=48;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           // 2.0
-                                     TMR1H=225;
-                                     TMR1L=192;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 1.9
-                                     TMR1H=227;
-                                     TMR1L=80;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             default:
-                                     break;
-                            }
-                        break;
-                case '8':           //1.8-1.2
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 1.8
-                                     TMR1H=227;
-                                     TMR1L=224;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 1.75
-                                     TMR1H=228;
-                                     TMR1L=168;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 1.7
-                                     TMR1H=229;
-                                     TMR1L=112;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 1.65
-                                     TMR1H=230;
-                                     TMR1L=56;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 1.6
-                                     TMR1H=231;
-                                     TMR1L=0;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 1.5
-                                     TMR1H=232;
-                                     TMR1L=144;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 1.4   
-                                     TMR1H=234;
-                                     TMR1L=32;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //1.3
-                                     TMR1H=235;
-                                     TMR1L=176;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           //1.25
-                                     TMR1H=236;
-                                     TMR1L=120;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '9':           // 1.2
-                                     TMR1H=237;
-                                     TMR1L=64;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             default:
-                                     break;
-                            }
-                        break;
-                case '9':           // 1.1-0.2
-/**/
-                        switch(levelofDimmer_LSB)
-                             {
-                             case '0':           // 1.1
-                                     TMR1H=238;
-                                     TMR1L=208;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '1':           // 1.0
-                                     TMR1H=240;
-                                     TMR1L=96;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '2':           // 0.9
-                                     TMR1H=241;
-                                     TMR1L=240;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '3':           // 0.8
-                                     TMR1H=243;
-                                     TMR1L=128;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '4'://TX1REG='n';      // 0.7
-                                     TMR1H=245;
-                                     TMR1L=16;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '5':               // 0.6
-                                     TMR1H=246;
-                                     TMR1L=160;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '6':               // 0.5    
-                                     TMR1H=248;
-                                     TMR1L=48;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '7':            //0.4
-                                     TMR1H=249;
-                                     TMR1L=192;
-                                     T1CONbits.TMR1ON = 1;
-                                     break;
-                             case '8':           //0.3
-                                     TMR1H=251;
-                                     TMR1L=80;
-                                    T1CONbits.TMR1ON = 1;
-                                    //   OUTPUT_DIMMER=0;
-                                     break;
-                             case '9':           // 0.2
-                                     TMR1H=252;
-                                    TMR1L=224;
-                                    T1CONbits.TMR1ON = 1;
-                                    //   OUTPUT_DIMMER=0;
-                                     break;
-                             default:
-                                     break;
-                            }
-                        break;
-                default:
-                        break;
-            } 
-         }
+                                                 }
         }
        
     }
@@ -1047,6 +467,23 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
     char switchNumberStringBuffer[2]="#";
     char dimmerSpeedStringBuffer[2]="#";
     
+    //**********************//
+    	int ConvertStringIntoInt=0;
+	float ConvertIntToTimeInMilisec=0;
+	unsigned long long int Pulse=0,NeedPulse=0,CompleteClock =65535;
+	float deno = 10.0;
+	float clockPerCycle=0.25;//microsecinds
+	int remainder=0; 
+	char HexlevelBuffer[5];
+	int start=0;
+    int end = strlen(HexlevelBuffer)-1;
+    char strH[3],strL[3];
+    
+    
+    
+    
+    
+    
     switchNumberStringBuffer[0]=charSwitchMSB;
     switchNumberStringBuffer[1]=charSwitchLSB;    
     integerSwitchNumber = atoi(switchNumberStringBuffer);//convert string into integer
@@ -1059,7 +496,20 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
     dimmerSpeedStringBuffer[0]=chDimmerSpeedMSB;
     dimmerSpeedStringBuffer[1]=chDimmerSpeedLSB;    
     integerSpeed = atoi(dimmerSpeedStringBuffer);
-    
+    ConvertIntToTimeInMilisec = (integerSpeed/deno);
+    ConvertIntToTimeInMilisec = (ConvertIntToTimeInMilisec*1000);//convert into microseconds
+    Pulse = (ConvertIntToTimeInMilisec/clockPerCycle);
+    NeedPulse = CompleteClock - Pulse;//65535-pulse
+    sprintf(HexlevelBuffer,"%X",NeedPulse);
+    strncpy(strH,HexlevelBuffer,2);
+	strH[2]='\0';
+//	printf("Higer Nibble: %s",strH);
+	printf("\n");
+	strncpy(strL,HexlevelBuffer+2,2);
+	strL[2]='\0';
+// 	TimerH = hexadecimalToDecimal(strH);
+// 	TimerL = hexadecimalToDecimal(strL);
+//printf("Lower Nibble: %s",strL);
     // save Parental lock state of each switch into parental lock buffer
 //    int integerParentalControl=charParentalControl-'0';
     parentalLockBuffer[integerSwitchNumber] = charParentalControl;
@@ -1117,8 +567,8 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
                     OUTPUT_DIMMER=1;  // For Triac --> inverted condition for off
                     break;
                 case 1:
-                    levelofDimmer_MSB = chDimmerSpeedMSB;
-                    levelofDimmer_LSB = chDimmerSpeedLSB;
+                	TimerH = hexadecimalToDecimal(strH);
+                	TimerL = hexadecimalToDecimal(strL);
                     break;
                 default:
                     break;
@@ -1131,7 +581,43 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
     
 }
 
-
+int hexadecimalToDecimal(char hexVal[]) 
+{    
+    int len = strlen(hexVal); 
+      
+    // Initializing base value to 1, i.e 16^0 
+    int base = 1; 
+      
+    int dec_val = 0; 
+      
+    // Extracting characters as digits from last character 
+    for (int i=len-1; i>=0; i--) 
+    {    
+        // if character lies in '0'-'9', converting  
+        // it to integral 0-9 by subtracting 48 from 
+        // ASCII value. 
+        if (hexVal[i]>='0' && hexVal[i]<='9') 
+        { 
+            dec_val += (hexVal[i] - 48)*base; 
+                  
+            // incrementing base by power 
+            base = base * 16; 
+        } 
+  
+        // if character lies in 'A'-'F' , converting  
+        // it to integral 10 - 15 by subtracting 55  
+        // from ASCII value 
+        else if (hexVal[i]>='A' && hexVal[i]<='F') 
+        { 
+            dec_val += (hexVal[i] - 55)*base; 
+          
+            // incrementing base by power 
+            base = base*16; 
+        } 
+    } 
+      
+    return dec_val; 
+} 
 /*
  * All input output pin initialization
  */
