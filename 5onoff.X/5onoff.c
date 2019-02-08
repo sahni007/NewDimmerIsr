@@ -1,21 +1,10 @@
 /*
  * File:   main.c
- * Author: varun.sahni04@gmail.com
- *
- * Created on 2/7/2019 6:25:38 PM UTC
- * "Created in MPLAB Xpress"
+ * Author: Alfaone
+ *This is proper working code  code for 3 dimmer_2 switches with new ISR
+ * Created on 8 February, 2019, 1:36 PM
  */
 
-
-/* 
- * File:   varun_4_1.c
- * Author: VARUNS SAHNI
- *
- * Created on 8 April, 2018, 8:40 PM
- * this is working code for new Isr PWM code 
- * AND WITH MANUAL SWITCH
- * last use: 07/01/19
- */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -51,34 +40,36 @@
 #define _XTAL_FREQ 16000000  
 
 // Pin MACROS
-#define OUTPUT_RELAY1 PORTFbits.RF1
-#define OUTPUT_RELAY2 PORTFbits.RF0
-#define OUTPUT_RELAY3 PORTAbits.RA3
-#define OUTPUT_RELAY4 PORTAbits.RA2
-#define OUTPUT_DIMMER PORTEbits.RE5   // PWM OUTPUT to MOC3021
+#define OUTPUT_RELAY1 PORTFbits.RF0
+#define OUTPUT_RELAY2 PORTFbits.RF1
+#define OUTPUT_DIMMER1 PORTAbits.RA2 // PWM OUTPUT to MOC3021
+#define OUTPUT_DIMMER2 PORTAbits.RA3 // PWM OUTPUT to MOC3021
+#define OUTPUT_DIMMER3 PORTEbits.RE5   // PWM OUTPUT to MOC3021
 
-#define INPUTSWITCH1 PORTFbits.RF7
-#define INPUTSWITCH2 PORTFbits.RF5
+#define INPUTSWITCH5 PORTFbits.RF7
+#define INPUTSWITCH4 PORTFbits.RF5
 #define INPUTSWITCH3 PORTFbits.RF3
-#define INPUTSWITCH4 PORTFbits.RF2
-#define INPUTSWITCH5 PORTAbits.RA5
+#define INPUTSWITCH2 PORTFbits.RF2
+#define INPUTSWITCH1 PORTAbits.RA5
 
-#define INPUT_SWITCH_DIR_1 TRISFbits.TRISF7
-#define INPUT_SWITCH_DIR_2 TRISFbits.TRISF5
+#define INPUT_SWITCH_DIR_5 TRISFbits.TRISF7
+#define INPUT_SWITCH_DIR_4 TRISFbits.TRISF5
 #define INPUT_SWITCH_DIR_3 TRISFbits.TRISF3
-#define INPUT_SWITCH_DIR_4 TRISFbits.TRISF2
-#define INPUT_SWITCH_DIR_5 TRISAbits.TRISA5
+#define INPUT_SWITCH_DIR_2 TRISFbits.TRISF2
+#define INPUT_SWITCH_DIR_1 TRISAbits.TRISA5
 
 #define OUTPUT_RELAY_DIR_1 TRISFbits.TRISF0
 #define OUTPUT_RELAY_DIR_2 TRISFbits.TRISF1
-#define OUTPUT_RELAY_DIR_3 TRISAbits.TRISA3
-#define OUTPUT_RELAY_DIR_4 TRISAbits.TRISA2
-#define OUTPUT_DIMMER_DIR_5 TRISEbits.TRISE5        // direction of PWM OUTPUT to MOC3021
+#define OUTPUT_DIMMER_DIR_1 TRISAbits.TRISA2
+#define OUTPUT_DIMMER_DIR_2 TRISAbits.TRISA3
+#define OUTPUT_DIMMER_DIR_3 TRISEbits.TRISE5        // direction of PWM OUTPUT to MOC3021
 
 /*
  * Extra Periferals Direction and PORT
  */
 #define ZCD_CCP9_DIR TRISEbits.TRISE3
+#define ZCD_CCP3_DIR  TRISGbits.TRISG0
+#define ZCD_CCP1_DIR TRISCbits.TRISC2
 // USART Directions
 #define USART_1_TRANSMIT_OUTPUT_DIR TRISCbits.TRISC6
 #define USART_1_RECIEVE_INPUT_DIR TRISCbits.TRISC7
@@ -136,9 +127,13 @@ unsigned char currentStateBuffer[(TOTAL_NUMBER_OF_SWITCH*4)+2]="#";
 
 unsigned int M1;unsigned int M2;unsigned int M3;unsigned int M4;unsigned int M5;
 
-int start_PWM_Generation_in_ISR_FLAG=FALSE;
+int start_PWM_Generation_in_ISR_FLAG_DIMMER1=FALSE;
+int start_PWM_Generation_in_ISR_FLAG_DIMMER2=FALSE;
+int start_PWM_Generation_in_ISR_FLAG_DIMMER3=FALSE;
 char levelofDimmer_MSB='0',levelofDimmer_LSB='0';
-int TimerH=0,TimerL=0;
+int Timer1H=0,Timer1L=0;
+int Timer3H=0,Timer3L=0;
+int Timer5H=0,Timer5L=0;
 void errorsISR(char* errNum);
 void errorsMain(char* errNum);
 void sendAcknowledgment(char* currentStateBuffer);
@@ -152,7 +147,13 @@ void EUSART_Initialize();
 
 void TMR3_Initialize();
 void TMR1_Initialize();
+void TMR2_Initialize();
+void TMR4_Initialize();
+void TMR5_Initialize();
+void TMR6_Initialize();
 void CCP9_Initialize();
+void CCP1_Initialize();
+void CCP3_Initialize();
 void allPeripheralInit();
 
 void copyReceivedDataBuffer();
@@ -162,41 +163,105 @@ void applianceControl(char switchMSB, char switchLSB, char switchSTATE, char dim
 int hexadecimalToDecimal(char hexVal[]) ;
 
 
+
  interrupt void isr() {
-    //*******************TIMER3 INTERRUPT**************************//
-     if(PIE3bits.TMR3IE==1 && PIR3bits.TMR3IF==1)
-    {           
-        PIR3bits.TMR3IF=0;
-        OUTPUT_DIMMER = TRUE;
-        T3CONbits.TMR3ON=0;
-       // TX1REG='Q';
-    }    
-   
-     
-    //*********************TIMER1 INTERRUPT**************************//
+   //*******************************DIMMER 11111 *************************************
+    
+    if(PIE1bits.TMR2IE==1 && PIR1bits.TMR2IF==1)
+    {        
+
+        while(TX1REG==0);
+        PIR1bits.TMR2IF=0;
+        OUTPUT_DIMMER1=ON;
+        T2CONbits.TMR2ON=0;
+    } 
+    
      if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF==1)
     {
+
         PIR1bits.TMR1IF=0;
-        //TX1REG='T';        
-        OUTPUT_DIMMER = FALSE;            
-        TMR3H=0xFF;
-        TMR3L=0xD8;
-        T3CONbits.TMR3ON = 1;
         T1CONbits.TMR1ON = 0;        
+        OUTPUT_DIMMER1=OFF;
+        PR2=0x9F;
+        T2CONbits.TMR2ON=1;
+               
+    }
+
+    //*******************************DIMMER 22222 *************************************
+    
+    if(PIE3bits.TMR4IE==1 && PIR3bits.TMR4IF==1)
+    {           
+
+        PIR3bits.TMR4IF=0;
+        OUTPUT_DIMMER2=ON;
+        T4CONbits.TMR4ON=0;
+
+    }
+    
+    if(PIE3bits.TMR3IE == 1 && PIR3bits.TMR3IF==1)
+    {
+
+        PIR3bits.TMR3IF=0;
+        
+        OUTPUT_DIMMER2=OFF;
+        PR4=0x9F;
+        T4CONbits.TMR4ON=1;
+        T3CONbits.TMR3ON = 0;        
+    }
+
+    //*******************************DIMMER 33333 *************************************    
+    
+    if(PIE3bits.TMR6IE == 1 && PIR3bits.TMR6IF == 1)
+    {           
+        PIR3bits.TMR6IF=0;
+        OUTPUT_DIMMER3=ON;
+        T6CONbits.TMR6ON=0;
+    } 
+    
+    if(PIE3bits.TMR5IE == 1 && PIR3bits.TMR5IF==1)
+    {
+         PIR3bits.TMR5IF=0;        
+        OUTPUT_DIMMER3=OFF;
+        PR6=0x9F;
+        T6CONbits.TMR6ON=1;
+        T5CONbits.TMR5ON=0;        
     }
     //*************************ZCD INTERRRUPT****************************//
-    
+     if(PIR1bits.CCP1IF==1 || PIR3bits.CCP3IF == 1 || PIR4bits.CCP9IF==1){
     if(CCP9IF){
         if(CCP9IF == 1){
              CCP9IF=0;
-         if(start_PWM_Generation_in_ISR_FLAG == 1){
-                                    TMR1H = TimerH;
-                                    TMR1L = TimerL;
+         if(start_PWM_Generation_in_ISR_FLAG_DIMMER1 == 1){
+                                    TMR1H = Timer1H;
+                                    TMR1L = Timer1L;
                                     T1CONbits.TMR1ON = 1;
                                                  }
-        }
+                        }
        
-    }
+                }
+        if(CCP3IF){
+        if(CCP3IF == 1){
+             CCP3IF=0;
+         if(start_PWM_Generation_in_ISR_FLAG_DIMMER2 == 1){
+                                    TMR3H = Timer3H;
+                                    TMR3L = Timer3L;
+                                    T3CONbits.TMR3ON = 1;
+                                                 }
+                        }
+       
+                }
+        if(CCP1IF){
+        if(CCP1IF == 1){
+             CCP1IF=0;
+         if(start_PWM_Generation_in_ISR_FLAG_DIMMER3 == 1){
+                                    TMR5H = Timer5H;
+                                    TMR5L = Timer5L;
+                                    T5CONbits.TMR5ON = 1;
+                                                             }
+                        }
+       
+                }
+     }//end of ccp   
     
     
     // ************************************* UART INTERRUPT *********************************************** //
@@ -232,16 +297,10 @@ int hexadecimalToDecimal(char hexVal[]) ;
 }
 
 
-
-
-/*
- * Alfaone Main code starts here
- * For 4 switches 1 Dimmer
- */
 int main() {
  
         M1=ON;    M2=ON;     M3=ON;    M4=ON;     M5=ON;
-   //     OUTPUT_RELAY1 = OFF; OUTPUT_RELAY2 = OFF; OUTPUT_RELAY3 = OFF; OUTPUT_RELAY4 = OFF;OUTPUT_DIMMER = ON;
+
     GPIO_pin_Initialize();
     allPeripheralInit();
 
@@ -335,6 +394,7 @@ int main() {
         {
             if(man==1)
             {
+                
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '1';__delay_ms(1);
@@ -353,12 +413,13 @@ int main() {
         {
             if(man == 1)
             {
+                start_PWM_Generation_in_ISR_FLAG_DIMMER1 = 0;
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '3';__delay_ms(1);
-            OUTPUT_RELAY3=OFF;
+            OUTPUT_DIMMER1=ON;
             }
             man=0;
             M3=1;
@@ -369,12 +430,13 @@ int main() {
         {
             if(man==1)
             {
+                start_PWM_Generation_in_ISR_FLAG_DIMMER1 = 0;
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '1';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '3';__delay_ms(1);
-            OUTPUT_RELAY3=ON;
+            OUTPUT_DIMMER1=OFF;
             }
             man=0;
             M3=0;
@@ -388,12 +450,13 @@ int main() {
         {
             if(man==1)
             {
+                start_PWM_Generation_in_ISR_FLAG_DIMMER2 = 0;
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '4';__delay_ms(1);
-            OUTPUT_RELAY4=OFF;
+            OUTPUT_DIMMER2=ON;
             }
             man=0;
             M4=1;
@@ -404,12 +467,13 @@ int main() {
         {
             if(man==1)
             {
+                start_PWM_Generation_in_ISR_FLAG_DIMMER2 = 0;
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '1';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '4';__delay_ms(1);
-            OUTPUT_RELAY4=ON;
+            OUTPUT_DIMMER2=OFF;
             }
             man=0;
             M4=0;
@@ -422,13 +486,13 @@ int main() {
         {
             if(man==1)
             {
-            start_PWM_Generation_in_ISR_FLAG = 0;
+            start_PWM_Generation_in_ISR_FLAG_DIMMER3 = 0;
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '5';__delay_ms(1);
-            OUTPUT_DIMMER=ON;
+            OUTPUT_DIMMER3=ON;
             }
             man=0;
             M5=1;
@@ -439,13 +503,13 @@ int main() {
         {
             if(man==1)
             {
-            start_PWM_Generation_in_ISR_FLAG = 0;
+            start_PWM_Generation_in_ISR_FLAG_DIMMER3 = 0;
             __delay_ms(5);
             TX1REG = 'R';__delay_ms(1);
             TX1REG = '1';__delay_ms(1);
             TX1REG = '0';__delay_ms(1);
             TX1REG = '5';__delay_ms(1);
-            OUTPUT_DIMMER=OFF;
+            OUTPUT_DIMMER3=OFF;
             }
             man=0;
             M5=0;
@@ -453,6 +517,7 @@ int main() {
         }
     }    
 }
+
 
 void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTATE, char chDimmerSpeedMSB, char chDimmerSpeedLSB,
         char charParentalControl, char charFinalFrameState){
@@ -536,14 +601,34 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
         case 2:
             OUTPUT_RELAY2 = integerSwitchState;
             break;
-        case 3:
-            OUTPUT_RELAY3 = integerSwitchState;
-
-            break;
-        case 4:
-        
-            OUTPUT_RELAY4 = integerSwitchState;
-            break;
+        case 3:{
+                start_PWM_Generation_in_ISR_FLAG_DIMMER1 = integerSwitchState;
+               switch(integerSwitchState){
+                case 0:
+                    OUTPUT_DIMMER1=1;  // For Triac --> inverted condition for off
+                    break;
+                case 1:
+                	Timer1H = hexadecimalToDecimal(strH);
+                	Timer1L = hexadecimalToDecimal(strL);
+                    break;
+                default:
+                    break;
+               }
+        }break;//end of case 3
+        case 4:{
+                start_PWM_Generation_in_ISR_FLAG_DIMMER2 = integerSwitchState;
+               switch(integerSwitchState){
+                case 0:
+                    OUTPUT_DIMMER2=1;  // For Triac --> inverted condition for off
+                    break;
+                case 1:
+                	Timer3H = hexadecimalToDecimal(strH);
+                	Timer3L = hexadecimalToDecimal(strL);
+                    break;
+                default:
+                    break;
+               }
+        }break;//end of case 5
 #ifdef SWITCH_5_RELAY
         case 5:
         {
@@ -562,14 +647,14 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
 #endif
  #ifdef SWITCH_5_DIMMER
         case 5:{
-                start_PWM_Generation_in_ISR_FLAG = integerSwitchState;
+                start_PWM_Generation_in_ISR_FLAG_DIMMER3 = integerSwitchState;
                switch(integerSwitchState){
                 case 0:
-                    OUTPUT_DIMMER=1;  // For Triac --> inverted condition for off
+                    OUTPUT_DIMMER3=1;  // For Triac --> inverted condition for off
                     break;
                 case 1:
-                	TimerH = hexadecimalToDecimal(strH);
-                	TimerL = hexadecimalToDecimal(strL);
+                	Timer5H = hexadecimalToDecimal(strH);
+                	Timer5L = hexadecimalToDecimal(strL);
                     break;
                 default:
                     break;
@@ -581,6 +666,9 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
         }
     
 }
+
+
+
 
 int hexadecimalToDecimal(char hexVal[]) 
 {    
@@ -633,12 +721,14 @@ void GPIO_pin_Initialize(){
     
     OUTPUT_RELAY_DIR_1 = 0;
     OUTPUT_RELAY_DIR_2 = 0;
-    OUTPUT_RELAY_DIR_3 = 0;
-    OUTPUT_RELAY_DIR_4 = 0;
-    OUTPUT_DIMMER_DIR_5 = 0; 
+    OUTPUT_DIMMER_DIR_1 = 0;
+    OUTPUT_DIMMER_DIR_2 = 0;
+    OUTPUT_DIMMER_DIR_3 = 0; 
     
     // peripherals directions
     ZCD_CCP9_DIR = 1;
+    ZCD_CCP1_DIR =1;
+    ZCD_CCP3_DIR =1;
     // USART DIRECTIONS
     USART_1_TRANSMIT_OUTPUT_DIR = 0;
     USART_1_RECIEVE_INPUT_DIR = 1;
@@ -653,7 +743,13 @@ void allPeripheralInit(){
     EUSART_Initialize();
     TMR1_Initialize();
     TMR3_Initialize();
+    TMR2_Initialize();
+    TMR4_Initialize();
+    TMR6_Initialize();
+    TMR5_Initialize();
     CCP9_Initialize();
+    CCP3_Initialize();
+    CCP1_Initialize();
 }
 
 /*
@@ -695,6 +791,91 @@ void EUSART_Initialize(){
 
     // Serial Port Enabled
     RC1STAbits.SPEN = 1;
+}
+void TMR5_Initialize(void)
+{
+    //Set the Timer to the options selected in the GUI
+
+    //T5CKPS 1:1; T5OSCEN disabled; nT5SYNC synchronize; TMR5CS FOSC/4; TMR5ON off; 
+    T5CON = 0x00;
+
+    //T5GSS T5G; TMR5GE disabled; T5GTM disabled; T5GPOL low; T5GGO_nDONE done; T5GSPM disabled; 
+    T5GCON = 0x00;
+
+    //TMR5H 123; 
+    TMR5H = 0x00;
+
+    //TMR5L 48; 
+    TMR5L = 0x00;
+
+    // Clearing IF flag.
+    PIR3bits.TMR5IF = 0;    
+    
+    // Enabling TMR5 interrupt.
+    PIE3bits.TMR5IE = 1;
+}
+
+void TMR2_Initialize(void)
+{
+//     Set TMR2 to the options selected in the User Interface
+
+//     T2CKPS 1:1; T2OUTPS 1:1; TMR2ON off; 
+    T2CON = 0x08;
+//
+//     PR2 39; 
+//    PR2 = 0x00;
+//
+//     TMR2 10; 
+    TMR2 = 0x00;
+
+//     Clearing IF flag before enabling the interrupt.
+    PIR1bits.TMR2IF = 0;
+
+//     Enabling TMR2 interrupt.
+    PIE1bits.TMR2IE = 1;
+         GIE = 1;
+
+//     Enables all active peripheral interrupts -----> INTCON reg .... bit 6         page 105
+    PEIE = 1;
+}
+void TMR4_Initialize(void)
+{
+    // Set TMR2 to the options selected in the User Interface
+
+    // T2CKPS 1:2; T2OUTPS 1:1; TMR2ON off; 
+    T4CON = 0x08;
+
+    // PR2 39; 
+//    PR2 = 0x00;
+
+    // TMR2 10; 
+    TMR4 = 0x00;
+
+    // Clearing IF flag before enabling the interrupt.
+    PIR3bits.TMR4IF = 0;
+
+    // Enabling TMR2 interrupt.
+    PIE3bits.TMR4IE = 1;
+}
+
+void TMR6_Initialize(void)
+{
+    // Set TMR6 to the options selected in the User Interface
+
+    // T6CKPS 1:2; T6OUTPS 1:1; TMR6ON off; 
+    T6CON = 0x08;
+
+    // PR6 39; 
+//    PR6 = 0x27;
+
+    // TMR6 0; 
+    TMR6 = 0x00;
+
+    // Clearing IF flag before enabling the interrupt.
+    PIR3bits.TMR6IF = 0;
+
+    // Enabling TMR6 interrupt.
+    PIE3bits.TMR6IE = 1;
 }
 void TMR1_Initialize(void)
 {
@@ -778,7 +959,55 @@ void CCP9_Initialize(){
     // Enable the CCP1 interrupt
     PIE4bits.CCP9IE = 1;
 }
+void CCP1_Initialize()
+{
+    // Set the CCP1 to the options selected in the User Interface
 
+    // MODE Every edge; EN enabled; FMT right_aligned;
+  //  CCP1CON = 0x05;//raising edge
+    CCP1CON = 0x04;//faling edge
+   //   CCP1CON = 0x06;//4th rISING edge
+ //   CCP1CON = 0x84;
+
+    // RH 0;
+    CCPR1H = 0x00;
+
+    // RL 0;
+    CCPR1L = 0x00;
+
+    // Clear the CCP1 interrupt flag
+    PIR1bits.CCP1IF = 0;
+
+    // Enable the CCP1 interrupt
+    PIE1bits.CCP1IE = 1;
+   GIE = 1;
+
+    // Enables all active peripheral interrupts -----> INTCON reg .... bit 6         page 105
+    PEIE = 1;
+}
+
+void CCP3_Initialize(void)
+{
+    // Set the CCP3 to the options selected in the User Interface
+
+    // MODE Every edge; EN enabled; FMT right_aligned;
+    CCP3CON = 0x84;    
+
+    // CCPR3L 0; 
+    CCPR3L = 0x00;    
+
+    // CCPR3H 0; 
+    CCPR3H = 0x00;    
+    
+    // Selecting Timer 3
+//    CCPTMRS0bits.C3TSEL = 0x1;
+
+    // Clear the CCP3 interrupt flag
+    PIR3bits.CCP3IF = 0;
+
+    // Enable the CCP3 interrupt
+    PIE3bits.CCP3IE = 0;
+}
 void peripheralsEnable(){
     // Transmit Enabled
     TX1STAbits.TXEN = 1;
@@ -860,7 +1089,7 @@ void pinINIT_extra(){
 void clearAllPorts(){
     OUTPUT_RELAY1=0;
     OUTPUT_RELAY2=0;
-    OUTPUT_RELAY3=0;
-    OUTPUT_RELAY4=0;
-    OUTPUT_DIMMER=1;
+    OUTPUT_DIMMER1=1;
+    OUTPUT_DIMMER2=1;
+    OUTPUT_DIMMER3=1;
 }
