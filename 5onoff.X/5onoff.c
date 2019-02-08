@@ -12,7 +12,7 @@
  * Author: VARUNS SAHNI
  *
  * Created on 8 April, 2018, 8:40 PM
- * this is test code for new Isr PWM code 
+ * this is working code for new Isr PWM code 
  * AND WITH MANUAL SWITCH
  * last use: 07/01/19
  */
@@ -471,7 +471,7 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
     	int ConvertStringIntoInt=0;
 	float ConvertIntToTimeInMilisec=0;
 	unsigned long long int Pulse=0,NeedPulse=0,CompleteClock =65535;
-	float deno = 10.0;
+	float deno = 20.0;
 	float clockPerCycle=0.25;//microsecinds
 	int remainder=0; 
 	char HexlevelBuffer[5];
@@ -496,6 +496,7 @@ void applianceControl(char charSwitchMSB, char charSwitchLSB, char charSwitchSTA
     dimmerSpeedStringBuffer[0]=chDimmerSpeedMSB;
     dimmerSpeedStringBuffer[1]=chDimmerSpeedLSB;    
     integerSpeed = atoi(dimmerSpeedStringBuffer);
+    integerSpeed = 99-integerSpeed;
     ConvertIntToTimeInMilisec = (integerSpeed/deno);
     ConvertIntToTimeInMilisec = (ConvertIntToTimeInMilisec*1000);//convert into microseconds
     Pulse = (ConvertIntToTimeInMilisec/clockPerCycle);
@@ -819,10 +820,10 @@ void errorsMain(char* errNum){
 }
 void sendAcknowledgment(char* currentStateBuffer){
   int Tx_count=0;
-  	while(Tx_count!=4)
+  while(*currentStateBuffer != NULL)
  	{ 
         while (!TX1STAbits.TRMT);
-//        TX1REG='S';
+
  		TX1REG = *currentStateBuffer;
  		*currentStateBuffer++;
         Tx_count++;
